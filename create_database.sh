@@ -3,7 +3,7 @@
 # DESCRIPTION: To create database ycsb
 #              
 #        FILE: create_database.sh
-#       USAGE: ./create_database.sh [sql-executor]
+#       USAGE: ./create_database.sh <sql-executor>
 #      AUTHOR: Wen Zhenglin
 #        DATE: 2016-8-30
 #     VERSION: 1.0
