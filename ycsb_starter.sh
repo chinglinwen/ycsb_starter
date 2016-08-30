@@ -22,12 +22,10 @@ if [ "x$db" = "x" -o "x$db" = "x-" ]; then
   db="$( ls | grep properties | tail -1 )"
 fi
 
-# time duration in seconds( default 120 seconds )
-# it will accumulate for every count
-# so the total time will be longer
+# total time for the test in seconds( default 30 minutes )
 time="$2"
 if [ "x$time" = "x" -o "x$time" = "x-" ]; then
-  time="120"
+  time="1800"
 fi
 
 extra="$3"
@@ -44,8 +42,11 @@ exec 2>>$log
 
 # start testing all
 echo "Start at: $( date +%F_%T )"
-echo "Will run for $time seconds"
+echo "Will run for total $time seconds"
 echo
+
+# start time counter
+SECONDS=0
 
 # do all workloads for a single count
 start () {
@@ -60,22 +61,18 @@ start () {
 # auto detect test
 i=100
 while true; do
+  echo "$SECONDS seconds is passed"
+  # check if out of time
+  if [ $SECONDS -gt $time ]; then
+    echo "Out of time now (for total $time seconds), no more test"
+    break
+  fi
+  echo "$(( $time-$SECONDS)) seconds left"
+  
   # do test
   echo "Starting count: $i"
   start $i
 
-  # check the duration to decide continue or not
-  lastloadfile="$( ls $base -tr | grep '\.load' | tail -1 )"
-  runtime="$( grep RunTime $base/$lastloadfile | awk '{ print $3 }' )"
-  duration="$( echo $runtime / 1000 | bc )"
-  if [ $duration -gt $time ]; then
-    echo "Duration $duration greater than time $time seconds, so no more test"
-    break
-  fi
-  echo "Lastloadfile=$lastloadfile"
-  echo "Duration is $duration seconds, good to go next test"
-  echo
-  
   case $i in
   100) step=100 ;;
   200) step=300 ;;
