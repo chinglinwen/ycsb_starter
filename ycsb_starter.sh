@@ -24,6 +24,7 @@ fi
 
 # time duration in seconds( default 120 seconds )
 # it will accumulate for every count
+# so the total time will be longer
 time="$2"
 if [ "x$time" = "x" -o "x$time" = "x-" ]; then
   time="120"

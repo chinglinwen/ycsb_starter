@@ -24,7 +24,7 @@ IsExist () {
 #db="../conf/db.properties"
 if ! IsExist "$db" ; then
   echo "db conf $db not exists"
-  return 1
+  exit 1
 fi
 
 dbname="$( basename $db | awk '{ print $1 }' FS='.' )"
