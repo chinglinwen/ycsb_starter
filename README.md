@@ -14,9 +14,12 @@
 
 需要修改对应的properties配置，以连接要进行测试的数据库
 
-对于mysql，本地需提供mysql客户端命令
+需下载ycsb方可使用，下载地址见：[YCSB download](https://github.com/brianfrankcooper/YCSB/releases)
+
+对于mysql，本地需提供mysql客户端命令，并下载对应的mysql jdbc驱动（如：mysql-connector-java-5.1.39-bin.jar)
 
 对于cockroachDB，本地需提供cockroachDB命令，如Glibc低于2.17，则需提供新版本的glibc_build目录
+并下载对应的postgreSql jdbc驱动（如：postgresql-9.4.1209.jre7.jar）
 
 关于YCSB的更多内容，请参考官方文档[YCSB](https://github.com/brianfrankcooper/YCSB)
 
