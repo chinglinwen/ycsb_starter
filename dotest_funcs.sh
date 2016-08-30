@@ -39,6 +39,13 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# do a sql test
+$dosql "show tables;" >/dev/null
+if [ $? -ne 0 ]; then
+  echo "Can't connect to the database"
+  exit 1
+fi
+
 # setenv
 # the parent dir is ycsb home
 cmd="../bin/ycsb"
