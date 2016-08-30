@@ -14,6 +14,9 @@
 
 	 ./ycsb_starter.sh mysql.properties &
 	 
+> 注：第一次运行需保证，数据库ycsb和表usertable存在
+>          可运行``./create_database.sh [db-name.sh]``进行创建
+	 
 目前提供的数据库连接配置文件有mysql和cockroachDB
 
 需要修改对应的properties配置，以连接要进行测试的数据库
