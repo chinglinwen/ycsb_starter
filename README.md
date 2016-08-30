@@ -22,8 +22,10 @@
 
 并下载对应的jdbc数据库驱动
 
-如：
+mysql
 	- mysql-connector-java-5.1.39-bin.jar （ 或更高版本）
+	
+cockroachDB
 	- postgresql-9.4.1209.jre7.jar（ 或更高版本）
 
 对于mysql，本地需提供mysql客户端命令
