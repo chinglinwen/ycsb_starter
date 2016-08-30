@@ -23,14 +23,14 @@
 并下载对应的jdbc数据库驱动
 
 mysql
-	- mysql-connector-java-5.1.39-bin.jar （ 或更高版本）
+	mysql-connector-java-5.1.39-bin.jar （ 或更高版本）
 	
 cockroachDB
-	- postgresql-9.4.1209.jre7.jar（ 或更高版本）
+	postgresql-9.4.1209.jre7.jar（ 或更高版本）
 
 对于mysql，本地需提供mysql客户端命令
 
-对于cockroachDB，本地需提供cockroachDB命令，如Glibc低于2.17，则需提供新版本的glibc_build目录
+对于cockroachDB，本地需提供cockroach命令，如Glibc低于2.17，则需提供新版本的glibc_build目录
 
 关于YCSB的更多内容，请参考官方文档[YCSB](https://github.com/brianfrankcooper/YCSB)
 
