@@ -78,6 +78,7 @@ while true; do
   200) step=300 ;;
   500) step=500 ;;
   1000) step=1000 ;;
+  *) step=2000 ;;
   esac
   
   i="$(( i + $step ))"
