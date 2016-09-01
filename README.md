@@ -23,6 +23,8 @@ It currently provides msyql.properties and cockroachDB properties ( as example)
 
 You may need to change the config in properties file, to connect the right database instance
 
+## Notes
+
 You need to download ycsb ( eg. ycsb-jdbc-binding-0.10.0.tar.gz) to run this starter, download address：[YCSB download](https://github.com/brianfrankcooper/YCSB/releases)
 
 And to download the respective jdbc sql driver
@@ -37,6 +39,8 @@ For mysql, the local command **mysql** must available
 
 For cockroachDB, the local command **cockroach** must available, if Glibc version is lower than 2.17, 
 You may need to build a new glibc version ( at least 2.17) , and provide that glibc_build directory
+
+## about YCSB
 
 To know more about YCSB, see the official documents [YCSB](https://github.com/brianfrankcooper/YCSB)
 
