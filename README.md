@@ -16,7 +16,7 @@ Or
 
 	 ./ycsb_starter.sh mysql.properties &
 	 
-> Note：The first time run, it's need the database **ycsb** and the table **usertable** is exists，
+> Note：The first time run, it's need the database **ycsb** and the table **usertable** are exists，
 > You can run `./create_database.sh db-name.sh` to create it
 	 
 It currently provides msyql.properties and cockroachDB properties ( as example)
@@ -27,11 +27,11 @@ You need to download ycsb ( eg. ycsb-jdbc-binding-0.10.0.tar.gz) to run this sta
 
 And to download the respective jdbc sql driver
 
-mysql
-	mysql-connector-java-5.1.39-bin.jar （ or higher version）
+- mysql
+	- mysql-connector-java-5.1.39-bin.jar （ or higher version）
 	
-cockroachDB
-	postgresql-9.4.1209.jre7.jar（ or higher version）
+- cockroachDB
+	- postgresql-9.4.1209.jre7.jar（ or higher version）
 
 For mysql, the local command **mysql** must available
 
