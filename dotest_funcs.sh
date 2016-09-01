@@ -32,8 +32,11 @@ base="Results.$dbname.$( date +%Y%m%d_%H%M%S )"
 #base="Results.d"
 mkdir "$base" 2>/dev/null
 
-# to get dosql function
-. ./$dbname.sh
+# to get dosql function,(control which executor to source)
+# for same type db, different version, use underscore to separate
+# for same type db, different db instance, no underscore
+sqlexecutor="$( echo "$dbname" | awk '{ print $1 }' FS='_' )"
+. ./$sqlexecutor.sh
 if [ $? -ne 0 ]; then
   echo "Can't source dosql function, can't do sql delete"
   exit 1
